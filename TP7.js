@@ -2,7 +2,7 @@
 // and insert them in the DOM object found with "whereTo" -- note this
 // uses document.querySelector, so use CSS notation on "whereTo"
 
-function loadFileInto(fromFile, whereTo) 
+function loadFileInto(fromFile, whereTo) {
 
 	// 1. creating a new XMLHttpRequest object
 	ajax = new XMLHttpRequest();
@@ -24,17 +24,19 @@ function loadFileInto(fromFile, whereTo)
 
 		}
 	} 
-// end ajax.onreadystatechange function
+    // end ajax.onreadystatechange function
 
 	// 4. let's go -- initiate request and process the responses
 	ajax.send();
+}
 
 window.onload = function(){
     document.getElementById("h1").style.color="yellow";
     document.getElementById("ingredients").onclick = function() {m1()};
     function m1() {
         document.getElementById("i").style.color="black";
-    }document.getElementById("equipment").onclick = function() {m2()};
+    }
+    document.getElementById("equipment").onclick = function() {m2()};
     function m2() {
         document.getElementById("e").style.color="black";   
     }
@@ -52,4 +54,4 @@ window.onload = function(){
     loadFileInto("ingredients.html", "#ingredients ul");
     loadFileInto("equipment.html", "#equipment ul");
     loadFileInto("directions.html", "#directions ol");
-}  
+}
